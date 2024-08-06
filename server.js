@@ -69,8 +69,12 @@ async function generateOgImage(title, content, uploadedImage) {
         .title { font: bold 48px sans-serif; fill: #333333; }
         .content { font: 28px sans-serif; fill: #666666; }
       </style>
-      <text x="50" y="180" class="title">${title.substring(0,75)}</text>
-      <text x="50" y="240" class="content">${content.substring(0, 100)}...</text>
+      <text x="50" y="180" class="title">
+        ${title.length > 30 ? title.substring(0, 27) + '...' : title}
+      </text>
+      <text x="50" y="240" class="content">
+        ${content.length > 60 ? content.substring(0,57) + '...' :content}
+      </text>
     </svg>
   `;
 
