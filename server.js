@@ -7,7 +7,9 @@ const cors = require("cors");
 
 const app = express();
 const upload = multer({ dest: "uploads/" });
-app.use(cors());
+app.use(cors({
+  origin:"https://og-image-gurshaan.vercel.app"
+}));
 
 // Ensure the public directory exists
 const publicDir = path.join(__dirname, "public");
